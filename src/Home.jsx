@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import  
+import './Home.css'
 
 function ImageUploader() {
   const [selectedImage, setSelectedImage] = useState(null);
-  const[result,setresult]=useState("");
-  const[confi,setconfi]=useState("");
+  const [result, setresult] = useState("");
+  const [confi, setconfi] = useState("");
   const [imagePreview, setImagePreview] = useState("");
 
   const handleImageChange = (e) => {
@@ -35,8 +35,8 @@ function ImageUploader() {
           'Content-Type': 'multipart/form-data',
         },
       });
-     
-      console.log('Image uploaded successfully:', response.data); 
+
+      console.log('Image uploaded successfully:', response.data);
       setresult(response.data.class)
       setconfi(response.data.confidence)
 
@@ -47,18 +47,21 @@ function ImageUploader() {
 
   return (
     <div>
-      <h2>Image Uploader</h2>
-      <input type="file" accept="image/*" onChange={handleImageChange} />
-      <button onClick={handleUpload}>Upload Image</button>
+      <h2 id='heading'>Potato-Disease Detector</h2>
+      <input type="file" accept="image/*" onChange={handleImageChange} id='inp' />
+      <button onClick={handleUpload} className='btn'>Upload Image</button>
 
       {selectedImage && (
         <div>
-          <h3>Preview:</h3>
-          <img src={imagePreview} alt="Selected" width="200" />
+
+          <img src={imagePreview} alt="Selected" width="200" id='img1' />
         </div>
       )}
-      <div id='result'>Disease:{result}<br/>
-                        Confidence:{confi}</div>
+      <div id='divBox'> 
+        <p id='result'>Disease:{result}</p>
+        <p id='confi'>  Confidence:{confi}</p>
+      </div>
+
     </div>
   );
 }

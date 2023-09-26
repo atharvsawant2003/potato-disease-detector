@@ -1,3 +1,55 @@
-body{
-    background-image:image-set("potato\image\back.jpg") ;
+body {
+    background-image: url("../image/back.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#heading {
+    color: black;
+    font-size: 300%;
+    margin-left: 23pc;
+}
+
+#inp {
+
+    margin-left: 23pc;
+    font-size: larger;
+    margin-top: 1cm;
+}
+
+.btn {
+
+    font-size: larger;
+}
+
+#img1 {
+    margin-top: 1cm;
+    margin-left: 35pc;
+    border: black solid;
+    /* width: 5cm; */
+}
+
+#result {
+    font-size: 0.7cm;
+
+}
+
+#confi {
+
+    font-size: 0.7cm;
+
+}
+
+#divBox {
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.7cm,
+
 }
